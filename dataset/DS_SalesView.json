@@ -6,6 +6,32 @@
 			"type": "LinkedServiceReference"
 		},
 		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "ID",
+				"type": "Int32"
+			},
+			{
+				"name": "CustomerID",
+				"type": "Int32"
+			},
+			{
+				"name": "FirstNameDist",
+				"type": "String"
+			},
+			{
+				"name": "LastNameDist",
+				"type": "String"
+			},
+			{
+				"name": "SaleDate",
+				"type": "Date"
+			},
+			{
+				"name": "SaleAmount",
+				"type": "Decimal"
+			}
+		],
 		"typeProperties": {
 			"tableName": {
 				"value": "select c.ID,d.CustomerID,c.FirstNameDist,c.LastNameDist,d.SaleDate,d.SaleAmount\nfrom SalesLT.CustomerDist c\njoin SalesLT.SalesDist d\non d.CustomerID = c.ID",

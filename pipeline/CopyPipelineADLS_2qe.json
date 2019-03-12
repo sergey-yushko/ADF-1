@@ -50,6 +50,65 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "SaveCSVtoADLS_1",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "UploadCSVfromADLS_2qe",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Destination",
+						"value": "[SalesLT].[CustomerDist]"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlSource",
+						"sqlReaderQuery": "select c.ID,d.CustomerID,c.FirstNameDist,c.LastNameDist,d.SaleDate,d.SaleAmount\nfrom SalesLT.CustomerDist c\njoin SalesLT.SalesDist d\non d.CustomerID = c.ID"
+					},
+					"sink": {
+						"type": "AzureDataLakeStoreSink"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"columnMappings": {
+							"ID": "Prop_0",
+							"CustomerID": "Prop_1",
+							"FirstNameDist": "Prop_2",
+							"LastNameDist": "Prop_3",
+							"SaleDate": "Prop_4",
+							"SaleAmount": "Prop_5"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_SalesView",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureDataLakeStoreFileGen1_1",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		]
 	},
