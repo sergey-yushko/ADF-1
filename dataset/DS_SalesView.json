@@ -1,0 +1,16 @@
+{
+	"name": "DS_SalesView",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DBPaaS1",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"typeProperties": {
+			"tableName": {
+				"value": "select c.ID,d.CustomerID,c.FirstNameDist,c.LastNameDist,d.SaleDate,d.SaleAmount\nfrom SalesLT.CustomerDist c\njoin SalesLT.SalesDist d\non d.CustomerID = c.ID",
+				"type": "Expression"
+			}
+		}
+	}
+}
