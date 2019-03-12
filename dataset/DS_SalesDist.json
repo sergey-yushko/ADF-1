@@ -1,0 +1,13 @@
+{
+	"name": "DS_SalesDist",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DBPaaS1",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"typeProperties": {
+			"tableName": "[SalesLT].[SalesDist]"
+		}
+	}
+}
