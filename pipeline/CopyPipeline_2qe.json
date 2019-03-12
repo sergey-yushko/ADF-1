@@ -1,0 +1,57 @@
+{
+	"name": "CopyPipeline_2qe",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_2qe",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Destination",
+						"value": "[SalesLT].[CustomerDist]"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlSource",
+						"sqlReaderQuery": "select top 10 * from SalesLT.Customer"
+					},
+					"sink": {
+						"type": "SqlSink",
+						"writeBatchSize": 10000
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"columnMappings": {
+							"Title": "TitleDist",
+							"FirstName": "FirstNameDist",
+							"LastName": "LastNameDist"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_2qe",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_2qe",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

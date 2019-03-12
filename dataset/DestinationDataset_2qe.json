@@ -1,0 +1,28 @@
+{
+	"name": "DestinationDataset_2qe",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DBPaaS1",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "TitleDist",
+				"type": "String"
+			},
+			{
+				"name": "FirstNameDist",
+				"type": "String"
+			},
+			{
+				"name": "LastNameDist",
+				"type": "String"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[SalesLT].[CustomerDist]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
