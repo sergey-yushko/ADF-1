@@ -88,12 +88,12 @@
 					"translator": {
 						"type": "TabularTranslator",
 						"columnMappings": {
-							"ID": "Prop_0",
-							"CustomerID": "Prop_1",
-							"FirstNameDist": "Prop_2",
-							"LastNameDist": "Prop_3",
-							"SaleDate": "Prop_4",
-							"SaleAmount": "Prop_5"
+							"ID": "ID",
+							"CustomerID": "CustomerID",
+							"FirstNameDist": "FirstName",
+							"LastNameDist": "LastName",
+							"SaleDate": "SaleDate",
+							"SaleAmount": "SaleAmount"
 						}
 					}
 				},
