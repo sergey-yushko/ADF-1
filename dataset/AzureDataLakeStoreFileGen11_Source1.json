@@ -1,0 +1,23 @@
+{
+	"name": "AzureDataLakeStoreFileGen11_Source1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLSGen1_1",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureDataLakeStoreFile",
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "",
+				"nullValue": "\\N",
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": false
+			},
+			"fileName": "Sales.csv",
+			"folderPath": "SalesData"
+		}
+	}
+}
