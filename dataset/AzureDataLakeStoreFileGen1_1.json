@@ -40,9 +40,12 @@
 				"nullValue": "\\N",
 				"treatEmptyAsNull": true,
 				"skipLineCount": 0,
-				"firstRowAsHeader": false
+				"firstRowAsHeader": true
 			},
-			"fileName": "export.txt",
+			"fileName": {
+				"value": "@concat('export_',formatDateTime(utcnow(),'YYYYMMDDHHmmss'),'.txt')",
+				"type": "Expression"
+			},
 			"folderPath": "SalesData"
 		}
 	}
