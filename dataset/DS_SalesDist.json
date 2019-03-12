@@ -6,6 +6,20 @@
 			"type": "LinkedServiceReference"
 		},
 		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "CustomerID",
+				"type": "Int32"
+			},
+			{
+				"name": "SaleDate",
+				"type": "Date"
+			},
+			{
+				"name": "SaleAmount",
+				"type": "Decimal"
+			}
+		],
 		"typeProperties": {
 			"tableName": "[SalesLT].[SalesDist]"
 		}

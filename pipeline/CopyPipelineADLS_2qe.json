@@ -32,9 +32,9 @@
 					"translator": {
 						"type": "TabularTranslator",
 						"columnMappings": {
-							"Title": "TitleDist",
-							"FirstName": "FirstNameDist",
-							"LastName": "LastNameDist"
+							"Prop_0": "CustomerID",
+							"Prop_1": "SaleDate",
+							"Prop_2": "SaleAmount"
 						}
 					}
 				},
