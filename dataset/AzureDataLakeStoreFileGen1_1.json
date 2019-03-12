@@ -8,27 +8,27 @@
 		"type": "AzureDataLakeStoreFile",
 		"structure": [
 			{
-				"name": "Prop_0",
+				"name": "ID",
 				"type": "String"
 			},
 			{
-				"name": "Prop_1",
+				"name": "CustomerID",
 				"type": "String"
 			},
 			{
-				"name": "Prop_2",
+				"name": "FirstName",
 				"type": "String"
 			},
 			{
-				"name": "Prop_3",
+				"name": "LastName",
 				"type": "String"
 			},
 			{
-				"name": "Prop_4",
+				"name": "SaleDate",
 				"type": "String"
 			},
 			{
-				"name": "Prop_5",
+				"name": "SaleAmount",
 				"type": "String"
 			}
 		],
