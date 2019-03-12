@@ -46,7 +46,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_2qe",
+						"referenceName": "DS_SalesDist",
 						"type": "DatasetReference"
 					}
 				]
