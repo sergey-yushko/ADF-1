@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "CopyADLS_2qe",
+				"name": "UploadCSVfromADLS_2qe",
 				"type": "Copy",
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -20,8 +20,8 @@
 				],
 				"typeProperties": {
 					"source": {
-						"type": "SqlSource",
-						"sqlReaderQuery": "select top 10 * from SalesLT.Customer"
+						"type": "AzureDataLakeStoreSource",
+						"recursive": true
 					},
 					"sink": {
 						"type": "SqlSink",
@@ -40,7 +40,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_2qe",
+						"referenceName": "AzureDataLakeStoreFileGen11_Source1",
 						"type": "DatasetReference"
 					}
 				],
